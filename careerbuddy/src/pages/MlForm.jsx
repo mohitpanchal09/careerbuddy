@@ -164,9 +164,9 @@ function MlForm() {
       body[`Skill${idx + 1}`] = option.value
     })
 
-    const res = await axios.post('http://localhost:8000/predict_career', body)
+    const res = await axios.post('https://careerbuddy-backend.onrender.com/predict_career', body)
     const score = res.data.prediction
-    for (const i in careerCategories) {   
+    for (const i in careerCategories) {
       if (careerCategories[i] === score) {
         alert(`Your career is ${i}`)
       }

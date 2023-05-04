@@ -109,7 +109,7 @@ const EditProfile = () => {
 
   const onSubmit = async e => {
     e.preventDefault()
-    const res = await axios.patch(`http://localhost:8080/api/user/${user._id}`, {
+    const res = await axios.patch(`https://careerbuddy-backend.onrender.com/api/user/${user._id}`, {
       ...formData,
       skills: formData.skills.length ? formData.skills.split(',') : [],
     })

@@ -62,7 +62,7 @@ function Review() {
 
   const [mentors, setMentors] = useState([])
   const getMentors = async () => {
-    const res = await axios.get('http://localhost:8080/api/user/mentors')
+    const res = await axios.get('https://careerbuddy-backend.onrender.com/api/user/mentors')
     setMentors(res.data?.data?.users)
   }
 
@@ -73,10 +73,13 @@ function Review() {
   const handleSubmit = async e => {
     e.preventDefault()
     console.log(formData)
-    const res = await axios.patch(`http://localhost:8080/api/user/${formData.for}/review`, {
-      rating: formData.rating,
-      review: formData.review,
-    })
+    const res = await axios.patch(
+      `https://careerbuddy-backend.onrender.com/api/user/${formData.for}/review`,
+      {
+        rating: formData.rating,
+        review: formData.review,
+      },
+    )
     if (res.status === 200) {
       toast.success('Review submitted successfully')
       setFormData({

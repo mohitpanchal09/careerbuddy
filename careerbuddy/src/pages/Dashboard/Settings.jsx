@@ -99,7 +99,7 @@ const Settings = () => {
   const {user, logout} = useContext(authContext)
 
   const deleteHandler = async () => {
-    const res = await axios.delete(`http://localhost:8080/api/user/${user._id}`)
+    const res = await axios.delete(`https://careerbuddy-backend.onrender.com/api/user/${user._id}`)
     if (res.status === 200) {
       logout()
       toast.success('Account Deleted')

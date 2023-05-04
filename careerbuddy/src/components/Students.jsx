@@ -51,7 +51,7 @@ function Students({showLayout = true}) {
   const [filtered, setFiltered] = useState([])
 
   const getStudents = async () => {
-    const res = await axios.get('http://localhost:8080/api/user/students')
+    const res = await axios.get('https://careerbuddy-backend.onrender.com/api/user/students')
     setStudents(res.data?.data?.users)
   }
 

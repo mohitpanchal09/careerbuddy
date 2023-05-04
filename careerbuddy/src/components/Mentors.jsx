@@ -53,7 +53,7 @@ function Mentors({showLayout = true}) {
   const [arrangeFilter, setArrangeFilter] = useState(0)
 
   const getMentors = async () => {
-    const res = await axios.get('http://localhost:8080/api/user/mentors')
+    const res = await axios.get('https://careerbuddy-backend.onrender.com/api/user/mentors')
     setMentors(res.data?.data?.users)
   }
 

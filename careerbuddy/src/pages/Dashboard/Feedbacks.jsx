@@ -55,7 +55,7 @@ const Feedbacks = () => {
 
   const getUser = async () => {
     try {
-      const res = await axios.get(`http://localhost:8080/api/user/${user?._id}`)
+      const res = await axios.get(`https://careerbuddy-backend.onrender.com/api/user/${user?._id}`)
       const data = res.data.data.user
       setCurrUser(data)
     } catch (error) {
@@ -68,7 +68,9 @@ const Feedbacks = () => {
   }, [])
 
   const handleDelete = async review_id => {
-    const res = await axios.delete(`http://localhost:8080/api/user/review/${review_id}`)
+    const res = await axios.delete(
+      `https://careerbuddy-backend.onrender.com/user/review/${review_id}`,
+    )
     if (res.status === 200) {
       toast.success('Review deleted successfully')
       getUser()
