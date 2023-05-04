@@ -24,7 +24,7 @@ const AuthState = props => {
   }
   const [state, dispatch] = useReducer(authReducer, initialState)
 
-  const url = 'http://localhost:8080'
+  const url = 'https://careerbuddy-backend.onrender.com'
 
   // Set token and load user
   const loadUser = async () => {
