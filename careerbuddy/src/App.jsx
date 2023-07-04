@@ -34,7 +34,7 @@ function App() {
   return (
     <div className="app">
       <AuthState>
-        <Router basename="/careerbuddy">
+        <Router basename="/">
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="careernews" element={<CareerNews />} />
