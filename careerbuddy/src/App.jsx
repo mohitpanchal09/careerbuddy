@@ -34,7 +34,7 @@ function App() {
   return (
     <div className="app">
       <AuthState>
-        <Router basename="/">
+        <Router basename="/careerbuddy">
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="careernews" element={<CareerNews />} />
@@ -79,4 +79,3 @@ function App() {
 }
 
 export default App
-                             
