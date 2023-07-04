@@ -18,6 +18,8 @@ export default function Swayamcourses() {
       setFiltered(data.courses)
       return
     }
+    // ok
+
     const d = data.courses.filter(e => {
       return (
         e.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
