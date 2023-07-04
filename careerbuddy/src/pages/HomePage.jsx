@@ -6,6 +6,7 @@ import Navbar from 'components/Navbar'
 import ServiceMap from 'components/ServiceMap'
 import Footer from 'components/Footer'
 import FAQ from 'components/FAQ'
+import Example from 'components/Example'
 function HomePage() {
   return (
     <div>
@@ -15,6 +16,7 @@ function HomePage() {
       <AboutUs />
       <Services />
       {/* <ServiceMap /> */}
+      {/* <Example /> */}
       <FAQ />
       <Footer />
     </div>
