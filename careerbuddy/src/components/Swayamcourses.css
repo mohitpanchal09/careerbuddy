@@ -2,7 +2,10 @@
     align-items: center;
     width: 100%;
   }
-  
+  .main_container{
+    width: 305px;
+    padding: 20px;
+  }
   .our_solution_category {
     display: flex;
     flex-direction: row;
@@ -28,6 +31,7 @@
     min-height: 265px;
     transition: 0.7s;
     min-width: 265px;
+
   }
   
   .solution_cards_box .solution_card:hover {

@@ -4,7 +4,35 @@ import Post from './Post'
 import data from 'utils/swayam.json'
 import './Swayamcourses.css'
 import Footer from './Footer'
+import styled from 'styled-components'
+import {mobile} from 'responsive'
 import Navbar from './Navbar'
+const SearchContainer = styled.div`
+  height: 50px;
+
+  margin: 20px;
+  width: 80%;
+  display: flex;
+  margin-right: auto;
+  margin-bottom: -5px;
+  margin-left: auto;
+  // background-color:white;
+`
+const InputContainer = styled.input`
+  border-radius: 10px;
+  width: 100%;
+  // background-color:white;
+  padding: 10px;
+  border: 1px solid gray;
+`
+const Heading = styled.p`
+  text-align: center;
+  font-weight: 600;
+  font-size: 30px;
+  padding: 20px;
+  color: #002b9a;
+  ${mobile({fontSize: '20px'})}
+`
 
 export default function Swayamcourses() {
   const [searchTerm, setSearchTerm] = useState('')
@@ -34,20 +62,24 @@ export default function Swayamcourses() {
   return (
     <>
       <Navbar />
-      <div className="main_container">
-        {isLoading && filtered.length === 0 ? (
-          <div>Loading...</div>
-        ) : (
-          <Pagination
-            bottomNav={true}
-            topNav={true}
-            itemsOnPage={4}
-            items={filtered}
-            entryProp="post"
-            children={<Post />}
-          />
-        )}
-      </div>
+      <Heading>You can enroll into the following Swayam courses</Heading>
+      <SearchContainer>
+        <InputContainer
+          placeholder="Search Courses by entering name or professor"
+          value={searchTerm}
+          onChange={e => setSearchTerm(e.target.value)}
+        ></InputContainer>
+      </SearchContainer>
+
+      <Pagination
+        bottomNav={true}
+        topNav={true}
+        itemsOnPage={8}
+        items={filtered}
+        entryProp="post"
+        children={<Post />}
+      />
+
       <Footer />
     </>
   )

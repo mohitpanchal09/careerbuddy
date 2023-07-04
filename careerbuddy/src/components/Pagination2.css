@@ -20,24 +20,29 @@
     background: transparent;
     border: transparent;
   
-    min-width: 2em;
+    width: 2rem;
   
     cursor: pointer;
   }
+  .paginationContainer__currentPageDiv{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+   
+  }
+  .paginationContainer__topNavControls{
+    padding: 15px;
+    display: none;
+  }
   .paginationContols__pageNoBtn--active {
-    border: 1px blue solid;
+    font-weight: 600;
+
   }
   .paginationContols__pageNoBtn--hidden {
     display: none;
   }
-  .paginationContols__pageNoBtn--dotsAfter::after {
-    content: " ... ";
-    color: black;
-  }
-  .paginationContols__pageNoBtn--dotsBefore::before {
-    content: " ... ";
-    color: black;
-  }
+  
   
   .paginationControls__arrowBtn {
     display: block;
