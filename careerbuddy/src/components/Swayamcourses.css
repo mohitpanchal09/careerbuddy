@@ -10,6 +10,8 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
   }
   .our_solution_category .solution_cards_box {
     display: flex;
@@ -157,6 +159,7 @@
   
     .our_solution_category .solution_cards_box {
       flex: auto;
+      /* width: 500px; */
     }
   }
   @media only screen and (min-width: 768px) {
@@ -178,4 +181,19 @@
 
   .main_container{
     padding:10px 10px;
+  }
+  @media only screen and (max-width: 768px) {
+    .solution_cards_box .solution_card {
+      
+      min-height: 165px;
+      /* transition: 0.7s; */
+      min-width: 100px;
+  
+    }
+    .section_our_solution{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+   
   }

@@ -1,6 +1,9 @@
 .pagintaion__paginationContainer {
     position: relative;
     overflow-x: hidden;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
   }
   
   .paginationControls {
@@ -8,10 +11,11 @@
     flex-direction: row;
   
     flex-wrap: wrap;
-  
+    
     margin-left: auto;
     margin-right: auto;
     justify-content: center;
+    
   }
   
   .paginationContols__pageNoBtn {
@@ -29,6 +33,7 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+    min-width: 100%;
    
   }
   .paginationContainer__topNavControls{
@@ -77,3 +82,8 @@
     }
   }
   
+  @media only screen and (max-width: 768px) {
+  .paginationContainer__bottomNavControls{
+    
+  }
+}
