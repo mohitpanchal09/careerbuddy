@@ -128,7 +128,7 @@ function NewForm() {
       Skill19: parseInt(formData.introvert),
     }
 
-    const res = await axios.post('https://careerbuddy-backend.onrender.com/predict_it_career', body)
+    const res = await axios.post('https://careerbuddy-ml.onrender.com/predict_it_career', body)
     const score = res.data.prediction
     for (const i in jobTitle) {
       if (jobTitle[i] === score) {
