@@ -166,7 +166,7 @@ function MlForm() {
 
     const res = await axios.post('https://careerbuddy-ml.onrender.com/predict_career', body)
     const score = res.data.prediction
-
+    console.log('hi')
     for (const i in careerCategories) {
       if (careerCategories[i] === score) {
         alert(`Your career is ${i}`)
