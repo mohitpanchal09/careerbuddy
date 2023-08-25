@@ -4,15 +4,18 @@ import {Link} from 'react-router-dom'
 import {AiOutlineArrowRight} from 'react-icons/ai'
 const Container = styled.div`
   width: 100%;
-  background-color: #f3f4ff;
+
   margin-top: 32px;
 `
 
-const Heading1 = styled.p`
-  padding: 0px 50px;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 42px;
+const Heading1 = styled.h1`
+  text-align: center;
+  padding: 20px;
+  font-family: cursive;
+  background: linear-gradient(to right, #f32170, #ff6b08, #cf23cf, #eedd44);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  font-size: 50px;
 `
 const Heading2 = styled.p`
   font-style: normal;
@@ -23,10 +26,12 @@ const Heading2 = styled.p`
 `
 const CardContainer = styled.div`
   display: flex;
-  gap: 50px;
-
+  // gap: 50px;
+  justify-content: space-evenly;
   flex-wrap: wrap;
-  padding: 2rem 4rem;
+  // padding: 2rem 4rem;
+  align-content: flex-start;
+  row-gap: 50px;
 `
 
 const Card = styled.div`
@@ -38,7 +43,7 @@ const Card = styled.div`
   margin-left: auto;
   margin-right: auto;
   padding: 1rem;
-
+  box-shadow: 3px 3px 10px lightgray;
   // margin: 20px;
 `
 const CardHeadingContainer1 = styled.div`

@@ -37,7 +37,10 @@
 .contact-info {
   padding: 2.3rem 2.2rem;
   position: relative;
-  background-color:#1d1684;
+ 
+  background-image: linear-gradient(135deg, #f34079 40%, #fc894d);
+  
+  font-size: 50px;
   font-family: Poppins;
   color: #F9F9F9;
 }

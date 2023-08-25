@@ -1,5 +1,5 @@
 import AuthState from 'context/auth/AuthState'
-import {Routes, BrowserRouter as Router, Route} from 'react-router-dom'
+import {Routes, BrowserRouter as Router, Route, useLocation} from 'react-router-dom'
 import setAuthToken from 'utils/setAuthToken'
 import HomePage from './pages/HomePage'
 import CareerNews from './pages/CareerNews'
@@ -24,6 +24,9 @@ import Review from 'pages/Dashboard/Review'
 import Chatbot from 'react-chatbot-kit'
 import Feedbacks from 'pages/Dashboard/Feedbacks'
 import WebsiteData from 'components/WebsiteData'
+import {useEffect, useLayoutEffect} from 'react'
+import ScrollTop from 'components/ScrollTop'
+
 // import NewForm from 'components/NewForm'
 
 if (localStorage.getItem('token')) {
@@ -35,6 +38,7 @@ function App() {
     <div className="app">
       <AuthState>
         <Router basename="/">
+          <ScrollTop />
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="careernews" element={<CareerNews />} />

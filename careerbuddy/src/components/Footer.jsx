@@ -9,6 +9,7 @@ import {mobile} from '../responsive'
 import {mobile4} from '../responsive'
 const Container = styled.div`
   display: flex;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 
   background-color: #f9f9f9;
   flex-direction: column;
@@ -65,6 +66,8 @@ const SocialIcon = styled.div`
 const Center = styled.div`
   color: black;
   // flex: 5;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
   padding: 20px;
 `
 const Title = styled.h3`

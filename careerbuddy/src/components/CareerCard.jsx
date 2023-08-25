@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react'
 import styled from 'styled-components'
 import {GoPrimitiveDot} from 'react-icons/go'
 import data from 'utils/careerpath.json'
-
+import {mobile} from 'responsive'
 import {Link} from 'react-router-dom'
 import Navbar from './Navbar'
 import Footer from './Footer'
@@ -12,26 +12,29 @@ import ReactPaginate from 'react-paginate'
 import {BsChevronLeft, BsChevronRight} from 'react-icons/bs'
 
 const Container = styled.div`
-  height: 280px;
-  width: 450px;
-  margin: 20px;
+  // height: 280px;
+  width: 400px;
+  // margin: 20px;
   border-radius: 14px;
-  background-color: rgba(126, 138, 245, 0.16);
+  box-shadow: 3px 3px 10px lightgray;
   display: flex;
   flex-direction: column;
+
   padding-bottom: 20px;
   justify-content: space-between;
+  ${mobile({margin: '0px 20px'})}
 `
 
 const Title = styled.p`
   font-style: normal;
-  font-weight: 700;
+  font-weight: 500;
   font-size: 25px;
   padding: 10px;
   line-height: 33px;
   /* identical to box height */
+  align-self: flex-start;
 
-  color: #002b9a;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 `
 const Text = styled.p`
   font-style: normal;
@@ -41,18 +44,20 @@ const Text = styled.p`
   line-height: 26px;
   display: flex;
   color: #002b9a;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  align-self: flex-start;
 `
 const Points = styled.p`
-  padding: 10px;
   font-style: normal;
   font-weight: 600;
   font-size: 15px;
   line-height: 26px;
-
-  color: gray;
+  align-self: flex-start;
+  color: black;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 `
 const Button = styled.button`
-  background: #002b9a;
+  background-image: linear-gradient(135deg, #f34079 40%, #fc894d);
   border-radius: 10px;
   width: 90%;
   border: none;
@@ -70,37 +75,22 @@ const Button = styled.button`
 const Wrapper = styled.div`
   /* display: flex;
   flex-wrap: wrap; */
-  width: 70%;
+  // width: 70%;
   margin-left: auto;
   margin-right: auto;
   align-items: center;
   justify-content: center;
 `
-const InnerContainer = styled.div``
-
-const SearchContainer = styled.div`
-  height: 50px;
-
-  margin: 20px;
-  width: 80%;
+const InnerContainer = styled.div`
   display: flex;
-  margin-right: auto;
-  margin-bottom: -5px;
-  margin-left: auto;
-  // background-color:white;
-`
-const InputContainer = styled.input`
-  border-radius: 10px;
-  width: 100%;
-  // background-color:white;
-  padding: 10px;
-  border: 1px solid gray;
+  flex-direction: column;
 `
 
 const FlexContainer = styled.div`
   display: flex;
+  gap: 40px;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-evenly;
 `
 
 function CareerCard() {
@@ -169,18 +159,13 @@ function CareerCard() {
                 padding: '10px',
                 borderRadius: '10px',
                 border: '1px solid gray',
-                margin: 'auto',
+                margin: '20px auto',
+                width: '80vw',
               },
             }}
           />
         </div>
-        {/* <SearchContainer>
-          <InputContainer
-            placeholder="Search Career by entering title or skills"
-            value={searchTerm}
-            onChange={e => setSearchTerm(e.target.value)}
-          ></InputContainer>
-        </SearchContainer> */}
+
         <FlexContainer>
           {currentItems?.map(c => (
             <Container>
@@ -193,14 +178,8 @@ function CareerCard() {
                 <Text>Pre Requisites:</Text>
                 <Points>
                   <ul>
-                    <li style={{display: 'flex', alignItems: 'center'}}>
-                      <GoPrimitiveDot style={{color: 'black'}} />
-                      {c.prerequesite1}
-                    </li>
-                    <li style={{display: 'flex', alignItems: 'center'}}>
-                      <GoPrimitiveDot style={{color: 'black'}} />
-                      {c.prerequesite2}
-                    </li>
+                    <li>{c.prerequesite1}</li>
+                    <li>{c.prerequesite2}</li>
                   </ul>
                 </Points>
               </InnerContainer>

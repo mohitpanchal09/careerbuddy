@@ -10,8 +10,11 @@ const Heading = styled.div`
   color: #0048ff;
   font-size: 44px;
   margin-top: 40px;
-
-  font-style: normal;
+  font-family: cursive;
+  background: linear-gradient(to right, #f32170, #ff6b08, #cf23cf, #eedd44);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  font-size: 50px;
 `
 const TextContainer = styled.div`
   width: 100%;

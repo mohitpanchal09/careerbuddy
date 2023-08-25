@@ -8,45 +8,36 @@ import Navbar from './Navbar'
 import Footer from './Footer'
 const Container = styled.div`
   width: 80%;
-  height: 500px;
-  background-color: #dfe6ff;
-  margin-left: auto;
-  margin-right: auto;
-  border-radius: 24px;
+  box-shadow: 3px 3px 10px lightgray;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+  margin: 10px auto;
+
+  padding: 20px;
 `
 const Wrapper = styled.div``
-const Title = styled.div`
-  font-style: normal;
-  font-weight: 700;
-  font-size: 30px;
-  line-height: 70px;
-  padding: 0px 160px;
-  color: #002b9a;
+const Title = styled.h1`
+  text-align: center;
+  padding: 20px;
+  font-family: cursive;
+  background: linear-gradient(to right, #f32170, #ff6b08, #cf23cf, #eedd44);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
 `
 const InnerContainer = styled.div`
-  display: flex;
-  justify-content: space-between;
+  display: block;
   padding: 10px;
 `
 const Heading = styled.p`
   font-style: normal;
-  font-weight: 700;
+  font-weight: 600;
   font-size: 20px;
-  //   line-height: 35px;
-  //   width: 00px;
-  color: #524fdb;
+  flex-grow: 1;
+  background: linear-gradient(to right, #f32170, #ff6b08, #cf23cf, #eedd44);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
 `
-const About = styled.p`
-  width: 80%;
-`
-const MainHeading = styled.div`
-  font-style: normal;
-  font-weight: 400;
-  font-size: 52.3636px;
-  line-height: 72px;
-
-  color: #000000;
-`
+const About = styled.p``
 
 function CareerDetails() {
   const [career, setCareer] = useState({})
@@ -82,16 +73,18 @@ function CareerDetails() {
           </InnerContainer>
           <InnerContainer>
             <Heading>Pre Requisites:</Heading>
-            <About style={{alignItems: 'center'}}>
-              <GoPrimitiveDot style={{color: 'black'}} /> {career.prerequesite1}
-              <br /> <GoPrimitiveDot style={{color: 'black'}} /> {career.prerequesite2}
+            <About style={{alignSelf: 'flex-start'}}>
+              <ul>
+                <li>{career.prerequesite1}</li>
+                <li>{career.prerequesite2}</li>
+              </ul>
             </About>
           </InnerContainer>
 
           <InnerContainer>
             <Heading>Link:</Heading>
             <About>
-              <a href={career.link}>{career.link}</a>
+              <a href={career.link}>Go to course</a>
             </About>
           </InnerContainer>
         </Container>
