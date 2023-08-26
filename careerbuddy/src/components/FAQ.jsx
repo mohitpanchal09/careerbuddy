@@ -76,6 +76,7 @@ const FaqContainer = styled.div`
 `
 const FaqHeading = styled.h1`
   text-align: center;
+  padding: 20px;
   font-family: cursive;
   background: linear-gradient(to right, #f32170, #ff6b08, #cf23cf, #eedd44);
   -webkit-text-fill-color: transparent;

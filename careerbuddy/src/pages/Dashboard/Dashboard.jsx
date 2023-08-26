@@ -10,9 +10,11 @@ import toast from 'react-hot-toast'
 import {FaUserCircle} from 'react-icons/fa'
 import {mobile} from 'responsive'
 import Burger2 from 'components/Burger2'
+import Sidebar from 'components/sidebar/Sidebar'
 
 const Container = styled.div`
   display: flex;
+  flex: 4;
   min-height: 100vh;
 `
 
@@ -24,11 +26,11 @@ const LeftNav = styled.div`
 `
 
 const Body = styled.div`
-  width: 100%;
+  width: 80vw;
 `
 const UserNav = styled.div`
   display: flex;
-  width: 100%;
+  width: 80vw;
   align-items: center;
   justify-content: space-between;
   padding: 8px 16px;
@@ -58,6 +60,9 @@ const UserDetails = styled.div`
   @media (max-width: 768px) {
     padding: 20px 0px;
   }
+`
+const Wrapper = styled.div`
+  display: flex;
 `
 
 const Button = styled.button`
@@ -132,23 +137,26 @@ const Dashboard = () => {
   }
 
   return (
-    <Container>
-      {/* <LeftNav> */}
-      <Burger2 open={open} />
-      {/* </LeftNav> */}
-      <Body>
-        {user ? (
-          <UserNav>
-            <UserDetails>
-              <FaUserCircle size={22} />
-              <span className="name">{user?.name}</span>(<span className="role">{user?.role}</span>)
-            </UserDetails>
-            <Button onClick={onLogout}>Logout</Button>
-          </UserNav>
-        ) : null}
-        <Outlet />
-      </Body>
-    </Container>
+    <Wrapper>
+      <div style={{flex: '1'}}>
+        <Sidebar />
+      </div>
+      <Container>
+        <Body>
+          {user ? (
+            <UserNav>
+              <UserDetails>
+                <FaUserCircle size={22} />
+                <span className="name">{user?.name}</span>(
+                <span className="role">{user?.role}</span>)
+              </UserDetails>
+              <Button onClick={onLogout}>Logout</Button>
+            </UserNav>
+          ) : null}
+          <Outlet />
+        </Body>
+      </Container>
+    </Wrapper>
   )
 }
 

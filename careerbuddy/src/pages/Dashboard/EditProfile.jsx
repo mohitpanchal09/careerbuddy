@@ -1,4 +1,5 @@
 import axios from 'axios'
+
 import authContext from 'context/auth/authContext'
 import {useContext, useRef, useState} from 'react'
 import toast from 'react-hot-toast'
@@ -136,7 +137,7 @@ const EditProfile = () => {
   }
 
   return (
-    <div>
+    <div style={{display: 'flex'}}>
       <Form onChange={onChange} onSubmit={onSubmit}>
         <Left>
           <InputName>Name:</InputName>
@@ -207,13 +208,6 @@ const EditProfile = () => {
               margin: '10px 15px',
             }}
           ></textarea>
-          {/* <Input
-            name="skills"
-            type="text"
-            placeholder="Add Skills separated by comma"
-            style={{height: '80px'}}
-            value={skills}
-          /> */}
           <label
             htmlFor="skills"
             style={{
