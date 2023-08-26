@@ -1,7 +1,7 @@
 import mongoose from 'mongoose'
 
 const connectDB = async () => {
-  const local_uri = 'mongodb://127.0.0.1:32/careerbuddy'
+  const local_uri = 'mongodb://127.0.0.1:27017/careerbuddy'
   try {
     const conn = await mongoose.connect(process.env.MONGO_URI || local_uri, {
       useNewUrlParser: true,
